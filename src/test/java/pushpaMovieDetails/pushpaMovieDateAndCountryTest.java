@@ -11,6 +11,7 @@ import com.GenericUtilities.WebDriverUtility;
 import com.ObjectRepository.FindIMDBPage;
 import com.ObjectRepository.IMDBHomePage;
 import com.ObjectRepository.PushpaMoviePage;
+import com.ObjectRepository.ReleaseInfoPage;
 import com.ObjectRepository.WIKIHomePage;
 
 public class pushpaMovieDateAndCountryTest extends BaseClass{
@@ -31,14 +32,19 @@ public class pushpaMovieDateAndCountryTest extends BaseClass{
 		imdb.getSearchBtn().click();
 		
 		FindIMDBPage imdbPage=new FindIMDBPage(driver);
-		imdbPage.getMovieName().click();
+		imdbPage.getMovieName().click(); 
 		
 		wLib.scrollBarAction(driver);
 		
 		PushpaMoviePage moviepage=new PushpaMoviePage(driver);
-		moviepage.movieDateAndCountry();
-		String country_1 = moviepage.getMovieCountry().getText();
-		String date_1 = moviepage.getMovieDate().getText();
+//		moviepage.movieDateAndCountry();
+//		String country_1 = moviepage.getMovieCountry().getText();
+//		String date_1 = moviepage.getMovieDate().getText();
+		moviepage.ReleaseDate();
+		
+		ReleaseInfoPage release=new ReleaseInfoPage(driver);
+		String country_1 = release.getCountryName().getText();
+		String date_1 = release.getReleaseDate().getText();
 		
 		wLib.forwardToNextPage(driver, subURL);
 		
@@ -57,7 +63,8 @@ public class pushpaMovieDateAndCountryTest extends BaseClass{
 		Reporter.log("Country name test is pass", true);
 		soft.assertAll();
 		
-		soft.assertEquals(date_1, date);
+		soft.assertEquals(date, date_1);
+		Reporter.log("Release date test is pass", true);
 		soft.assertAll();		
 		
 	}
