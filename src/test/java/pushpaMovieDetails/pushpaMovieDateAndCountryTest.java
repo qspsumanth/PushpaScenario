@@ -37,9 +37,6 @@ public class pushpaMovieDateAndCountryTest extends BaseClass{
 		wLib.scrollBarAction(driver);
 		
 		PushpaMoviePage moviepage=new PushpaMoviePage(driver);
-//		moviepage.movieDateAndCountry();
-//		String country_1 = moviepage.getMovieCountry().getText();
-//		String date_1 = moviepage.getMovieDate().getText();
 		moviepage.ReleaseDate();
 		
 		ReleaseInfoPage release=new ReleaseInfoPage(driver);

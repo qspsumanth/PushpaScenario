@@ -12,8 +12,6 @@ public class PushpaMoviePage {
 	}
 	
 	@FindBy(xpath = "//a[.='Release date']") private WebElement releaseDate;
-//	@FindBy(xpath = "//a[.='Release date']/parent::li[@role='presentation']/descendant::ul[@role='presentation']") private WebElement movieDate;
-//	@FindBy(xpath = "//button[.='Country of origin']/parent::li[@role='presentation']/descendant::ul[@role='presentation']") private WebElement movieCountry;
 
 	public WebElement getReleaseDate() {
 		return releaseDate;
@@ -22,19 +20,7 @@ public class PushpaMoviePage {
 	public void ReleaseDate() {
 		releaseDate.click();
 	}
-//	public WebElement getMovieDate() {
-//		return movieDate;
-//	}
-//	public WebElement getMovieCountry() {
-//		return movieCountry;
-//	}
-//	
-//	public void movieDateAndCountry() {
-//	String date = movieDate.getText();
-//	System.out.println(date);
-//	String country = movieCountry.getText();
-//	System.out.println(country);
-//	}
+
 	
 
 }
